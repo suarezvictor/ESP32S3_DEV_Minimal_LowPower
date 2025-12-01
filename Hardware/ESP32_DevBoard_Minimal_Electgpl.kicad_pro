@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.0,
-          "height": 1.7,
-          "width": 1.7
+          "drill": 0.0,
+          "height": 1.8,
+          "width": 1.2
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -81,14 +81,6 @@
         ],
         [
           "malformed_courtyard|156207210|122781211|5b93b1f3-a2b7-4771-808b-189751d1f25d|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "silk_over_copper|140285576|80778822|9868d976-fdbb-43ee-9a4f-e803f2160908|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "silk_over_copper|158065577|80778822|57986054-d96b-47aa-8a3b-ddf6f282b7e2|00000000-0000-0000-0000-000000000000",
           ""
         ]
       ],
@@ -506,7 +498,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.1524,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -524,7 +516,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1524,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -532,7 +524,7 @@
         "microvia_drill": 0.1,
         "name": "3V3",
         "pcb_color": "rgb(255, 0, 0)",
-        "priority": 1,
+        "priority": 0,
         "schematic_color": "rgb(255, 0, 0)",
         "track_width": 0.2032,
         "via_diameter": 0.6,
@@ -541,7 +533,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.1524,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -549,7 +541,7 @@
         "microvia_drill": 0.1,
         "name": "50R",
         "pcb_color": "rgb(0, 0, 255)",
-        "priority": 2,
+        "priority": 1,
         "schematic_color": "rgb(0, 0, 255)",
         "track_width": 0.2032,
         "via_diameter": 0.6,
@@ -558,15 +550,7 @@
       },
       {
         "bus_width": 12,
-        "name": "GND",
-        "pcb_color": "rgb(132, 132, 132)",
-        "priority": 0,
-        "schematic_color": "rgb(132, 132, 132)",
-        "wire_width": 12
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.1524,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
@@ -574,12 +558,22 @@
         "microvia_drill": 0.1,
         "name": "Power",
         "pcb_color": "rgb(255, 153, 0)",
-        "priority": 3,
+        "priority": 2,
         "schematic_color": "rgb(255, 153, 0)",
         "track_width": 0.2032,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 8
+      },
+      {
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2286,
+        "name": "USB",
+        "pcb_color": "rgb(41, 219, 255)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2286
       }
     ],
     "meta": {
@@ -587,6 +581,15 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "Net-(AE1-A)": [
+        "50R"
+      ],
+      "Net-(J3-In)": [
+        "50R"
+      ],
+      "Net-(U1-RFIN)": [
+        "50R"
+      ],
       "Net-(U2-LNA_IN{slash}RF)": [
         "50R"
       ]
@@ -609,8 +612,12 @@
         "pattern": "VBUS"
       },
       {
-        "netclass": "GND",
+        "netclass": "Default",
         "pattern": "GND"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USBD_*"
       }
     ]
   },
